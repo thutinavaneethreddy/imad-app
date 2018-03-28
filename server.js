@@ -4,19 +4,46 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var articleOne = {
-    title: 'First Article',
-    heading: 'First Article',
-    date: 'Feb 2018',
-    content: `<p>This page has been created just to explore more about creating more HTML
-                pages and linking them to URL's</p>
-                <p>This page has been created just to explore more about creating more HTML
-                pages and linking them to URL's</p>
-                <p>This page has been created just to explore more about creating more HTML
-                pages and linking them to URL's</p>
-                <p>This page has been created just to explore more about creating more HTML
-                pages and linking them to URL's</p>`
+var articles = {
+    articleOne: {
+        title: 'First Article',
+        heading: 'First Article',
+        date: 'Feb 13 2018',
+        content: `<p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>
+                    <p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>
+                    <p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>
+                    <p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>`
+    },
+    articleTwo: {
+        title: 'Second Article',
+        heading: 'Second Article',
+        date: 'Feb 13 2018',
+        content: `<p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>
+                    <p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>
+                    <p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>
+                    <p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>`
+    },
+    articleThree: {
+        title: 'Third Article',
+        heading: 'Third Article',
+        date: 'Feb 13 2018',
+        content: `<p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>
+                    <p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>
+                    <p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>
+                    <p>This page has been created just to explore more about creating more HTML
+                    pages and linking them to URL's</p>`
+    },
 };
 function createTemplate(data){
     var title = data.title;
@@ -63,17 +90,10 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article-one', function(req,res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function(req,res) {
+  res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two', function(req,res){
-  res.sendFile(path.join(__dirname,'ui','article-two.html'));
-});
-
-app.get('/article-three', function(req,res){
-  res.sendFile(path.join(__dirname,'ui','article-three.html'));
-});
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
