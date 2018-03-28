@@ -5,6 +5,52 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne = {
+    title: 'First Article',
+    heading: 'First Article',
+    date: 'Feb 2018',
+    content: `<p>This page has been created just to explore more about creating more HTML
+                pages and linking them to URL's</p>
+                <p>This page has been created just to explore more about creating more HTML
+                pages and linking them to URL's</p>
+                <p>This page has been created just to explore more about creating more HTML
+                pages and linking them to URL's</p>
+                <p>This page has been created just to explore more about creating more HTML
+                pages and linking them to URL's</p>`
+};
+function createTemplate(data){
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
+    var htmlTemplate = `<!DOCTYPE html>
+    <html>
+        <head>
+            <title>
+                ${title}
+            </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="container">
+                <div>
+                    <h1>${heading}</h1>
+                </div>
+                ${date}
+                <hr/>
+                <a href="/">Click here to go home</a>
+                <hr/>
+                <div>
+                    ${content}
+                </div>
+            </div>
+        </body>
+    </html>`;
+    return htmlTemplate;
+}
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -18,7 +64,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/article-one', function(req,res) {
-  res.sendFile(path.join(__dirname, 'ui' ,'article-one.html'));
+  res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two', function(req,res){
