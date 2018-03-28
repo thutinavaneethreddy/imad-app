@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var articles = {
-    articleOne: {
+    article-one: {
         title: 'First Article',
         heading: 'First Article',
         date: 'Feb 13 2018',
@@ -18,7 +18,7 @@ var articles = {
                     <p>This page has been created just to explore more about creating more HTML
                     pages and linking them to URL's</p>`
     },
-    articleTwo: {
+    article-two: {
         title: 'Second Article',
         heading: 'Second Article',
         date: 'Feb 13 2018',
@@ -31,7 +31,7 @@ var articles = {
                     <p>This page has been created just to explore more about creating more HTML
                     pages and linking them to URL's</p>`
     },
-    articleThree: {
+    article-three: {
         title: 'Third Article',
         heading: 'Third Article',
         date: 'Feb 13 2018',
