@@ -1,5 +1,3 @@
-console.log('Loaded!');
-
 var element = document.getElementById('img');
 var marginLeft = 0;
 function moveRight(){
