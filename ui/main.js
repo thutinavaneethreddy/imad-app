@@ -15,7 +15,7 @@ button.onclick = function(){
     var request = new XMLHttpRequest();
     
    //make a request
-    request.open('GET','thutinavaneethreddy.imad.hasura-app.io/counter');
+    request.open('GET','http://thutinavaneethreddy.imad.hasura-app.io/counter',true);
     request.send(null);
     
     //capture response from the request and store in a variable
