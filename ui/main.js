@@ -1,6 +1,6 @@
 console.log('Loaded!');
 
-var element = getElementById('img');
+var element = docement.getElementById('img');
 var marginLeft = 0;
 function moveRight(){
     marginLeft +=5;
