@@ -9,9 +9,25 @@ element.onclick = function(){
 };
 
 var button = document.getElementById('counter');
-var counter=0;
 button.onclick = function(){
-    counter++;
-    var span = document.getElementById('count');
-    span.innerHTML = counter.toString();
+    
+    //create a new request object
+    var request = new XMLHttpRequest();
+    
+    //make a request
+    request.open('GET','thutinavaneethreddy.imad.hasura-app.io/counter');
+    request.send(null);
+    
+    //capture response from the request and store in a variable
+    request.onreadystatechange = function(){
+        if(request.readyState == XMLHttprequest.DONE){
+            if(request.status == 200){
+                var counter = request.responseText;
+                var span = document.getElementById('count');
+                span.innerHTML = counter.toString();
+            }
+        }
+        
+    }
+    
 };
