@@ -58,7 +58,5 @@ submit.onclick = function(){
                 ul.innerHTML=list;
             }
         }
-    }
-    //capture the names and render the list
-    
+    };
 };
