@@ -36,13 +36,12 @@ button.onclick = function(){
 
 
 //submit name
-
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function(){
     //Make a request to the server and send the name
     var request = new XMLHttpRequest();
-    var nameInput = document.getElementById('name');
-    var name = nameInput.value;
     request.open('GET','http://thutinavaneethreddy.imad.hasura-app.io/submit-name?name='+name);
     request.send(null);
     
