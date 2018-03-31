@@ -40,11 +40,11 @@ var submit = document.getElementById('submit_btn');
 submit.onclick = function(){
     //Make a request to the server and send the name
     //capture the names and render the list
-    //var names=['name1','name2','name3'];
-    //var list='';
-    //for(var i=0;i<names.length();i++){
-        //list+='<li>' + names[i]+'</li>';
-    //}
-   // var ul=document.getElementById('namelist');
-    //ul.innerHTML=list;
+    var names=['name1','name2','name3'];
+    var list='';
+    for(var i=0;i<names.length();i++){
+        list+='<li>' + names[i]+'</li>';
+    }
+    var ul=document.getElementById('namelist');
+    ul.innerHTML=list;
 };
