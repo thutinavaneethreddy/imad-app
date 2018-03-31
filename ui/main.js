@@ -1,3 +1,4 @@
+//move the image
 var element = document.getElementById('img');
 var marginLeft = 0;
 function moveRight(){
@@ -8,6 +9,7 @@ element.onclick = function(){
     var interval = setInterval(moveRight,50);
 };
 
+//increase the counter on button click
 var button = document.getElementById('counter');
 button.onclick = function(){
     
@@ -29,7 +31,12 @@ button.onclick = function(){
         }
         
     };
-    
-     
-    
 };
+
+//submit name
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+submit.onclick = function(){
+    
+}
