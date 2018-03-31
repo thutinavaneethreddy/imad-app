@@ -43,11 +43,9 @@ submit.onclick = function(){
     var s=document.getElementById('count');
     var names=['name1','name2','name3'];
     var list='';
-    s.innerHTML=list;
     for(var i=0;i<names.length();i++){
-        list+= '<li>' + names[i]+ '</li>';
+        list = list+ '<li>' + names[i]+ '</li>';
     }
-    s.innerHTML=list;
     var ul=document.getElementById('namelist');
     ul.innerHTML=list;
 };
