@@ -40,6 +40,8 @@ var submit = document.getElementById('submit_btn');
 submit.onclick = function(){
     //Make a request to the server and send the name
     //capture the names and render the list
+    var s=document.getElementById('count');
+    s.innerHTML='1';
     var names=['name1','name2','name3'];
     var list='';
     for(var i=0;i<names.length();i++){
